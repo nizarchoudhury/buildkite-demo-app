@@ -19,9 +19,15 @@ steps:
       - text: "Enter your name here"
         key: "name"
   #### STAGE ####
-  - label: "Manager approval"
-    type: block
-    prompt: "Do you approve of the following build: Hello "
+- block: "Request Release"
+    fields:
+      - select: "Stream"
+        key: "release-stream"
+        options:
+          - label: "Beta"
+            value: "beta"
+          - label: "Stable"
+            value: "stable"
     #### STAGE ####
   - label: ":large_green_circle: Running Hello Go program"
     command:
