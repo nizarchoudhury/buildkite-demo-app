@@ -19,7 +19,7 @@ steps:
       - text: "Enter your name here"
         key: "name"
   #### STAGE ####
-- block: "Request Release"
+  - block: "Request Release"
     fields:
       - select: "Stream"
         key: "release-stream"
