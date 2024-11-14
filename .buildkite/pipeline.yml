@@ -19,15 +19,15 @@ steps:
       - text: "Enter your name here"
         key: "name"
   #### STAGE ####
-  - block: "Request Release"
+  - block: "Manager Approval"
     fields:
-      - select: "Stream"
-        key: "release-stream"
+      - select: "Do you approve of the build? Hello $(buildkite-agent meta-data get "name")"
+        key: "choice"
         options:
-          - label: "Beta"
-            value: "beta"
-          - label: "Stable"
-            value: "stable"
+          - label: "Yes"
+            value: "yes"
+          - label: "No"
+            value: "no"
     #### STAGE ####
   - label: ":large_green_circle: Running Hello Go program"
     command:
