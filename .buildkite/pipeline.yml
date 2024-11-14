@@ -21,7 +21,7 @@ steps:
   #### STAGE ####
   - block: "Manager Approval"
     fields:
-      - select: "Do you approve of the build? Hello $(buildkite-agent meta-data get "name")"
+      - select: "Do you approve of the build?"
         key: "choice"
         options:
           - label: "Yes"
