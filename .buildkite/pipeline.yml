@@ -28,9 +28,9 @@ steps:
             value: "yes"
           - label: "No"
             value: "no"
+    
     #### STAGE ####
   - label: ":large_green_circle: Running Hello Go program"
+    #depends on: "choice"
     command:
-      - buildkite-agent artifact download "hello/hello" .
-      - chmod +x hello/hello
-      - ./hello/hello $(buildkite-agent meta-data get "name")
+      - ./script.sh
