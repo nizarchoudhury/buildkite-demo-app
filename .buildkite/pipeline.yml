@@ -30,9 +30,9 @@ steps:
             value: "no"
   
   - label: "Load release type into env variable"
-    command: |
-      export choice=$(buildkite-agent meta-data get "choice")
-      echo $choice
+    command: 
+    - choice=$(buildkite-agent meta-data get "choice")
+    - echo $choice
     
     #### STAGE ####
   - label: ":large_green_circle: Running Hello Go program"
