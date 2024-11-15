@@ -18,6 +18,7 @@ steps:
     fields:
       - text: "Enter your name here"
         key: "name"
+        default: "Bob Saget"
   #### STAGE ####
   - block: "Manager Approval"
     fields:
