@@ -31,7 +31,7 @@ steps:
   
   - label: "Load release type into env variable"
     command: |
-      export choice=$(buildkite-agent meta-data get choice)
+      export choice=$(buildkite-agent meta-data get "choice")
       echo $choice
     
     #### STAGE ####
