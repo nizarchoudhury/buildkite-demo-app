@@ -33,6 +33,6 @@ steps:
   - label: ":large_green_circle: Running Hello Go program"
     command: |
       if [[ "$$(buildkite-agent meta-data get choice)" == "yes" ]]; then
-        buildkite-agent pipeline upload .buildkite/last-stage.yml
+        ./script.sh
       fi
     
