@@ -33,4 +33,5 @@ steps:
   - label: ":large_green_circle: Running Hello Go program"
     #depends on: "choice"
     command:
-      - ./script.sh
+      - chmod +x ./buildkite/script.sh
+      - ./.buildkite/script.sh
