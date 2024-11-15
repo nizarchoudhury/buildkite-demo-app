@@ -28,19 +28,14 @@ steps:
           - label: "Yes"
             value: "yes"
           - label: "No"
-            value: "no"
-  
-  - label: "Load release type into env variable"
-    command: 
-    - echo $(buildkite-agent meta-data get "choice")
-
-    
+            value: "no"    
     #### STAGE ####
   - label: ":large_green_circle: Running Hello Go program"
-    #depends on: "choice"
-    command:
-      #- buildkite-agent artifact download "hello/hello" .
-      #- chmod +x hello/hello
-      #- ./hello/hello $(buildkite-agent meta-data get "name")
-      - chmod +x script.sh
-      - ./script.sh
+  #  depends on: "choice"
+    command: |
+  #    - chmod +x script.sh
+  #    - ./script.sh
+       if [ $$(buildkite-agent step get "choice" == "yes" ]; then
+        buildkite-agent pipeline upload .buildkite/last-stage.yml
+      fi
+    
