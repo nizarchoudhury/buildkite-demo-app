@@ -2,7 +2,9 @@ steps:
 
 notify:
   - slack: "#buildkite-pipeline"
-    if: build.state == "blocked"
+      channels: 
+        - "#buildkite-pipeline"
+      if: build.state == "blocked"
   
   #### STAGE ####
   - label: ":docker: Build Project"
