@@ -1,4 +1,9 @@
 steps:
+
+notify:
+  - slack: "#buildkite-pipeline"
+    if: build.state == "blocked"
+  
   #### STAGE ####
   - label: ":docker: Build Project"
     plugins:
@@ -21,11 +26,6 @@ steps:
         default: "Bob Saget"
   #### STAGE ####
   - block: "Manager Approval"
-    notify:
-      - slack: 
-          channels: 
-            - "#buildkite-pipeline"
-          message: "This pipeline needs to be approved. Please review and approve as soon as possible."
     fields:
       - select: "Do you approve of the build?"
         key: "choice"
