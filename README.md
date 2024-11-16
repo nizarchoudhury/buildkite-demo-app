@@ -6,6 +6,7 @@ The first stage involves pulling the YAML pipeline template from the .buildkite 
 
 Another block stage is implemented as an "Approval step." This is a simulation of what could happen in a production DevOps environment which may need an approval from a team lead, a Release Engineer, etc. If you choose yes, then the pipeline will continue and execute a shell script to run the Go app inside a docker container. The end result should be "Hello (name)!" If you choose no, then the pipeline will throw an error and fail, as the build was not approved to proceed.
 
+There are some files here that are unused - I kept them as relics of my (many) trials and errors. Feel free to reach out if you have any questions!
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
